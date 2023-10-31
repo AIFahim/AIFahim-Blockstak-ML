@@ -9,6 +9,9 @@ model = joblib.load('best_dt_model.pkl')
 # Load the dictionary of label encoders
 label_encoders = joblib.load('label_encoders.pkl')
 
+# Load the pre-trained StandardScaler
+scaler = joblib.load('your_scaler.pkl')
+
 # Create a sidebar for user input
 st.sidebar.header('User Input')
 
@@ -54,6 +57,16 @@ def get_user_input():
     
     # Convert to DataFrame to match the input shape of our model
     user_data_df = pd.DataFrame(user_data)
+
+    # Display the DataFrame for debug
+    st.write("User inputted data before scaling: ", user_data_df)
+    
+    # Scale the user data
+    user_data_scaled = scaler.transform(user_data_df)
+    
+    # Display the scaled data
+    st.write("User inputted data after scaling: ", user_data_scaled)
+
     return user_data_df
 
 # Get user input
