@@ -1,21 +1,16 @@
 import streamlit as st
 import joblib
 import numpy as np
-from sklearn.preprocessing import LabelEncoder
+import pandas as pd
 
 # Load the trained Decision Tree model
 model = joblib.load('best_dt_model.pkl')
 
+# Load the dictionary of label encoders
+label_encoders = joblib.load('label_encoders.pkl')
+
 # Create a sidebar for user input
 st.sidebar.header('User Input')
-
-# Initialize Label Encoders (one for each categorical feature)
-label_encoders = {}
-categorical_features = ['job', 'month', 'education', 'poutcome']
-
-for feature in categorical_features:
-    label_encoders[feature] = LabelEncoder()
-    label_encoders[feature].fit(df[feature])
 
 # Categorical options based on your data
 categorical_options = {
@@ -24,8 +19,6 @@ categorical_options = {
     'education': ['primary', 'secondary', 'tertiary', 'unknown'],
     'poutcome': ['failure', 'other', 'success', 'unknown'],
 }
-
-
 
 def get_user_input():
     # Collect user input for top 10 features only
@@ -39,7 +32,7 @@ def get_user_input():
     education = st.sidebar.selectbox('Education', categorical_options['education'])
     poutcome = st.sidebar.selectbox('Previous Outcome', categorical_options['poutcome'])
     campaign = st.sidebar.slider('Number of Contacts in Campaign', 1, 63, 2)
-    
+
     # Label encode categorical features
     user_data = {
         'age': [age],
@@ -53,10 +46,9 @@ def get_user_input():
         'poutcome': [label_encoders['poutcome'].transform([poutcome])[0]],
         'campaign': [campaign],
     }
-    
+
     # Convert to DataFrame to match the input shape of our model
     user_data_df = pd.DataFrame(user_data)
-    
     return user_data_df
 
 # Get user input
