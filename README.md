@@ -22,7 +22,7 @@
 - **Summary Statistics**: Most people are around 41 years old, work in management, and have an average bank balance of about 1423 Euros.
 - **Missing Values**: No missing values in the dataset.
   
-- **Categorical Features**: Observations Categorical Features
+**Categorical Features**: Observations Categorical Features
 - Job Distribution: Most people work in management, blue-collar jobs, or are technicians.
 - Marital Status Distribution: The majority are married.
 - Education Level Distribution: Most have a secondary level of education.
