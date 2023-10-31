@@ -22,29 +22,30 @@ categorical_options = {
 
 def get_user_input():
     # Collect user input for top 10 features only
-    age = st.sidebar.slider('Age', 18, 100, 41)
-    job = st.sidebar.selectbox('Job Type', categorical_options['job'])
+    duration = st.sidebar.number_input('Duration', min_value=0)
     balance = st.sidebar.number_input('Balance', min_value=-8000, max_value=80000, value=1423)
+    age = st.sidebar.slider('Age', 18, 100, 41)
     day = st.sidebar.slider('Day of Month', 1, 31, 15)
     month = st.sidebar.selectbox('Month', categorical_options['month'])
-    duration = st.sidebar.number_input('Duration', min_value=0)
     pdays = st.sidebar.number_input('Days since last contact', min_value=-1)
-    education = st.sidebar.selectbox('Education', categorical_options['education'])
+    job = st.sidebar.selectbox('Job Type', categorical_options['job'])
     poutcome = st.sidebar.selectbox('Previous Outcome', categorical_options['poutcome'])
     campaign = st.sidebar.slider('Number of Contacts in Campaign', 1, 63, 2)
+    education = st.sidebar.selectbox('Education', categorical_options['education'])
+    
 
     # Label encode categorical features
     user_data = {
-        'age': [age],
-        'job': [label_encoders['job'].transform([job])[0]],
+        'duration': [duration],
         'balance': [balance],
+        'age': [age],
         'day': [day],
         'month': [label_encoders['month'].transform([month])[0]],
-        'duration': [duration],
         'pdays': [pdays],
-        'education': [label_encoders['education'].transform([education])[0]],
+        'job': [label_encoders['job'].transform([job])[0]],
         'poutcome': [label_encoders['poutcome'].transform([poutcome])[0]],
         'campaign': [campaign],
+        'education': [label_encoders['education'].transform([education])[0]],
     }
 
     print(user_data)
