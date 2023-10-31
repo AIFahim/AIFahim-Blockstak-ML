@@ -40,12 +40,12 @@ def get_user_input():
         'balance': [balance],
         'age': [age],
         'day': [day],
-        'month': [label_encoders['month'].transform([month])[0]],
+        'month': [int(label_encoders['month'].transform([month])[0])],
         'pdays': [pdays],
-        'job': [label_encoders['job'].transform([job])[0]],
-        'poutcome': [label_encoders['poutcome'].transform([poutcome])[0]],
+        'job': [int(label_encoders['job'].transform([job])[0])],
+        'poutcome': [int(label_encoders['poutcome'].transform([poutcome])[0])],
         'campaign': [campaign],
-        'education': [label_encoders['education'].transform([education])[0]],
+        'education': [int(label_encoders['education'].transform([education])[0])],
     }
 
 
