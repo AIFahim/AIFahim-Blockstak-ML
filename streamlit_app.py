@@ -52,20 +52,22 @@ def get_user_input():
     }
 
 
-    # Display the user_data dictionary in the Streamlit app
-    st.write("User inputted data: ", user_data)
+    # # Display the user_data dictionary in the Streamlit app
+    # st.write("User inputted data: ", user_data)
     
     # Convert to DataFrame to match the input shape of our model
     user_data_df = pd.DataFrame(user_data)
 
-    # Display the DataFrame for debug
-    st.write("User inputted data before scaling: ", user_data_df)
+    st.write("10 important features are consider because not all the features are important")
+    
+    # # Display the DataFrame for debug
+    # st.write("User inputted data before scaling: ", user_data_df)
     
     # Scale the user data
     user_data_scaled = scaler.transform(user_data_df)
     
-    # Display the scaled data
-    st.write("User inputted data after scaling: ", user_data_scaled)
+    # # Display the scaled data
+    # st.write("User inputted data after scaling: ", user_data_scaled)
 
     return user_data_scaled
 
