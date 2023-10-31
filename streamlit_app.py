@@ -48,8 +48,6 @@ def get_user_input():
         'education': [label_encoders['education'].transform([education])[0]],
     }
 
-    # Display the user_data dictionary in the Streamlit app
-    st.write("User inputted data type: ", type(user_data))
 
     # Display the user_data dictionary in the Streamlit app
     st.write("User inputted data: ", user_data)
