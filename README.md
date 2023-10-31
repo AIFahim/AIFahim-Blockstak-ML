@@ -80,6 +80,9 @@
 - `duration` and `campaign` have a slight negative correlation of -0.08, suggesting that more contacts in the campaign could slightly decrease the duration of calls. However, this is not a strong correlation.
 - `age` has very low correlation with other numerical variables, indicating that it might not be a strong predictor for other numerical variables in this dataset.
 
+<img src="https://github.com/AIFahim/AIFahim-Blockstak-ML/blob/master/images/corr_numericals.png" width="400" height="300">
+
+
 **Correlation of numeric features with the label**:
   **Observations**
 - Duration: It has the highest positive correlation (0.40) with the label. This suggests that longer call durations are somewhat associated with a higher likelihood of a client subscribing to a term deposit.
@@ -88,6 +91,7 @@
 - Age and Balance: These have very weak positive correlations with the label.
 - Day and Campaign: These have weak negative correlations with the label.
 
+<img src="https://github.com/AIFahim/AIFahim-Blockstak-ML/blob/master/images/corr_w_labels.png" width="400" height="300">
  
 **Outliers**: 
  **Based on Z-Scores**
@@ -100,6 +104,9 @@
 - Z-Scores of Pdays: Most Z-scores are below 3, but there are some that go beyond.
 - Z-Scores of Previous: Most Z-scores are below 3, but there are some that go beyond.
 
+<img src="https://github.com/AIFahim/AIFahim-Blockstak-ML/blob/master/images/zscores.png" width="400" height="300">
+
+
  **Based on Box-Plots**
   
 - Boxplot of Age: A few outliers above the upper whisker.
@@ -108,6 +115,9 @@
 - Boxplot of Campaign: Several outliers above the upper whisker.
 - Boxplot of Pdays: Many outliers, mostly on the higher end.
 - Boxplot of Previous: Several outliers above the upper whisker.
+
+<img src="https://github.com/AIFahim/AIFahim-Blockstak-ML/blob/master/images/Box_plots.png" width="400" height="300">
+
 ---
 
 ## Predictive Modeling/Classification <a name="predictive-modeling"></a>
