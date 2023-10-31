@@ -49,13 +49,14 @@
 - Outcome of Previous Campaign: For most people, the outcome of the previous campaign is unknown.
 - Term Deposit Subscription: A smaller number of people have subscribed to a term deposit compared to those who haven't.
 
-![Categorical Features 1](https://github.com/AIFahim/AIFahim-Blockstak-ML/blob/master/images/categoricals_1.png)
-![Categorical Features 2](https://github.com/AIFahim/AIFahim-Blockstak-ML/blob/master/images/categoricals_2.png)
-![Categorical Features 3](https://github.com/AIFahim/AIFahim-Blockstak-ML/blob/master/images/categoricals_3.png)
-![Categorical Features 4](https://github.com/AIFahim/AIFahim-Blockstak-ML/blob/master/images/categoricals_4.png)
-![Categorical Features 5](https://github.com/AIFahim/AIFahim-Blockstak-ML/blob/master/images/categoricals_5.png)
-![Categorical Features 6](https://github.com/AIFahim/AIFahim-Blockstak-ML/blob/master/images/categoricals_6.png)
-![Categorical Features 7](https://github.com/AIFahim/AIFahim-Blockstak-ML/blob/master/images/categoricals_7.png)
+<img src="https://github.com/AIFahim/AIFahim-Blockstak-ML/blob/master/images/categoricals_1.png" width="400" height="300">
+<img src="https://github.com/AIFahim/AIFahim-Blockstak-ML/blob/master/images/categoricals_2.png" width="400" height="300">
+<img src="https://github.com/AIFahim/AIFahim-Blockstak-ML/blob/master/images/categoricals_3.png" width="400" height="300">
+<img src="https://github.com/AIFahim/AIFahim-Blockstak-ML/blob/master/images/categoricals_4.png" width="400" height="300">
+<img src="https://github.com/AIFahim/AIFahim-Blockstak-ML/blob/master/images/categoricals_5.png" width="400" height="300">
+<img src="https://github.com/AIFahim/AIFahim-Blockstak-ML/blob/master/images/categoricals_6.png" width="400" height="300">
+<img src="https://github.com/AIFahim/AIFahim-Blockstak-ML/blob/master/images/categoricals_7.png" width="400" height="300">
+
 
 **Numerical Features**: 
 - Age Distribution: Most people are between 30 and 40 years old.
