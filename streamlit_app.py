@@ -67,7 +67,7 @@ def get_user_input():
     # Display the scaled data
     st.write("User inputted data after scaling: ", user_data_scaled)
 
-    return user_data_df
+    return user_data_scaled
 
 # Get user input
 user_input = get_user_input()
