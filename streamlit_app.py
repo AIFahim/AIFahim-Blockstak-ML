@@ -18,7 +18,7 @@ st.sidebar.header('User Input')
 # Categorical options based on your data
 categorical_options = {
     'job': ['admin.', 'blue-collar', 'entrepreneur', 'housemaid', 'management', 'retired', 'self-employed', 'services', 'student', 'technician', 'unemployed', 'unknown'],
-    'month': ['apr', 'aug', 'dec', 'feb', 'jan', 'jul', 'jun', 'mar', 'may', 'nov', 'oct', 'sep'],
+    'month': ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'],
     'education': ['primary', 'secondary', 'tertiary', 'unknown'],
     'poutcome': ['failure', 'other', 'success', 'unknown'],
 }
