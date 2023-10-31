@@ -72,8 +72,22 @@
 - Day and Campaign: These have weak negative correlations with the label.
 
  
-**Outliers**: Some features like 'balance' and 'duration' have outliers which were handled.
-
+**Outliers**: 
+**Based on Z-Scores**
+- Z-Scores of Age: Most Z-scores are around 0, with a few reaching up to 3 or more.
+- Z-Scores of Balance: Most Z-scores are below 3, but there are some that go beyond.
+- Z-Scores of Day: All Z-scores are well within the -3 to 3 range.
+- Z-Scores of Duration: Some Z-scores go beyond the 3 threshold.
+- Z-Scores of Campaign: Most Z-scores are below 3, but there are some that go beyond.
+- Z-Scores of Pdays: Most Z-scores are below 3, but there are some that go beyond.
+- Z-Scores of Previous: Most Z-scores are below 3, but there are some that go beyond.
+**Based on Box-Plots**
+- Boxplot of Age: A few outliers above the upper whisker.
+- Boxplot of Balance: Several outliers, mainly on the higher end.
+- Boxplot of Day: No noticeable outliers. Boxplot of Duration: Some outliers on the higher end.
+- Boxplot of Campaign: Several outliers above the upper whisker.
+- Boxplot of Pdays: Many outliers, mostly on the higher end.
+- Boxplot of Previous: Several outliers above the upper whisker.
 ---
 
 ## Predictive Modeling/Classification <a name="predictive-modeling"></a>
