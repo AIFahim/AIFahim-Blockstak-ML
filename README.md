@@ -19,8 +19,26 @@
 
 ### Observations
 
-- **Summary Statistics**: Most people are around 41 years old, work in management, and have an average bank balance of about 1423 Euros.
-- **Missing Values**: No missing values in the dataset.
+**Summary Statistics**:
+- Age: The average age is about 41 years. The youngest person is 19 and the oldest is 87.
+- Job: The most common job type is "management".
+- Marital Status: Most people are married.
+- Education: Most people have a "secondary" level of education.
+- Default: Very few people have credit in default. Most have "no" in this column.
+- Balance: The average bank balance is about 1423 Euros. Some have a negative balance, while the highest is 71,188 Euros.
+- Housing: Most people have a housing loan.
+- Loan: Most people do not have a personal loan.
+- Contact: The most common method of contact is "cellular".
+- Day: Contacts are made throughout the month, with the average day being around the 16th.
+- Month: May is the most common month for contact.
+- Duration: The average duration of contact is about 264 seconds.
+- Campaign: On average, people are contacted about 3 times during a campaign.
+- Pdays: Most people haven't been contacted before.
+- Previous: Most people have zero contacts before the current campaign.
+- Poutcome: The outcome of the previous campaign is mostly "unknown".
+- Y (Target): Most people have not subscribed to a term deposit.
+
+**Missing Values**: No missing values in the dataset.
   
 **Categorical Features**: 
 - Job Distribution: Most people work in management, blue-collar jobs, or are technicians.
@@ -45,7 +63,7 @@
 - `duration` and `campaign` have a slight negative correlation of -0.08, suggesting that more contacts in the campaign could slightly decrease the duration of calls. However, this is not a strong correlation.
 - `age` has very low correlation with other numerical variables, indicating that it might not be a strong predictor for other numerical variables in this dataset.
 
-**Correlation of numeric features with the label
+**Correlation of numeric features with the label**:
   **Observations**
 - Duration: It has the highest positive correlation (0.40) with the label. This suggests that longer call durations are somewhat associated with a higher likelihood of a client subscribing to a term deposit.
 - Previous: This variable has a correlation of 0.12 with the label, which is not very strong but still positive.
