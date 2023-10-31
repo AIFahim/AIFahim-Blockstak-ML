@@ -10,7 +10,7 @@ model = joblib.load('best_dt_model.pkl')
 label_encoders = joblib.load('label_encoders.pkl')
 
 # Load the pre-trained StandardScaler
-scaler = joblib.load('your_scaler.pkl')
+scaler = joblib.load('scaler.pkl')
 
 # Create a sidebar for user input
 st.sidebar.header('User Input')
