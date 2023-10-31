@@ -186,8 +186,11 @@ After 50 trials, the best performing model and hyperparameters were:
 
 ## Deployment in Streamlit <a name="streamlit"></a>
 
-- The model is deployed in a Streamlit app where users can input the feature values to get a prediction.
-- Only top 10 important features are considered for prediction to simplify the user interface.
+The model is deployed in a Streamlit app, which provides an interactive user interface for making predictions. Only the top 10 important features are considered in the prediction model to make the user interface simpler and more focused.
+
+Deployed model here: [Streamlit App](https://aifahim-blockstak-ml-ntwnox2nctw8qbaukqrmoy.streamlit.app/)
+
+
 
 ---
 
