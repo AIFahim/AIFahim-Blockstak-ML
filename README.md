@@ -65,7 +65,15 @@
 - Number of Contacts in Campaign: Most people have been contacted less than 10 times in the current campaign.
 - Days Since Last Contact: Most people have not been contacted before (indicated by the spike at -1).
 - Number of Contacts Before Campaign: Most people were not contacted before the current campaign.
-  
+
+<img src="https://github.com/AIFahim/AIFahim-Blockstak-ML/blob/master/images/numericals_1.png" width="400" height="300">
+<img src="https://github.com/AIFahim/AIFahim-Blockstak-ML/blob/master/images/numericals_2.png" width="400" height="300">
+<img src="https://github.com/AIFahim/AIFahim-Blockstak-ML/blob/master/images/numericals_3.png" width="400" height="300">
+<img src="https://github.com/AIFahim/AIFahim-Blockstak-ML/blob/master/images/numericals_4.png" width="400" height="300">
+<img src="https://github.com/AIFahim/AIFahim-Blockstak-ML/blob/master/images/numericals_5.png" width="400" height="300">
+<img src="https://github.com/AIFahim/AIFahim-Blockstak-ML/blob/master/images/numericals_6.png" width="400" height="300">
+
+
 **Correlation between numerical variables**:
   **Observations**
 - `pdays` and `previous` have a correlation of 0.45, which is moderate. This suggests that if a customer was contacted before, it's likely that more days have passed since the last contact.
