@@ -49,6 +49,9 @@ def get_user_input():
     }
 
     # Display the user_data dictionary in the Streamlit app
+    st.write("User inputted data type: ", type(user_data))
+
+    # Display the user_data dictionary in the Streamlit app
     st.write("User inputted data: ", user_data)
     
     # Convert to DataFrame to match the input shape of our model
