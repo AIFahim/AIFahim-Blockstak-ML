@@ -83,7 +83,14 @@ Only the 10 most important features are considered.
 st.header('Prediction Result')
 prediction = model.predict(user_input)
 
+# Show the prediction
 if prediction[0] == 1:
-    st.write('The customer is likely to subscribe to a term deposit.')
+    st.markdown('<p style="font-size:24px; color:green;">The customer is likely to subscribe to a term deposit.</p>', unsafe_allow_html=True)
 else:
-    st.write('The customer is unlikely to subscribe to a term deposit.')
+    st.markdown('<p style="font-size:24px; color:red;">The customer is unlikely to subscribe to a term deposit.</p>', unsafe_allow_html=True)
+
+# Add some markdown text for explanation
+st.markdown("""
+The prediction is based on the 10 most important features of the dataset.
+For more accurate results, consider using more features and data points.
+""")
