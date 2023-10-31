@@ -78,7 +78,7 @@
 - `README.md`: This README file.
 - `best_dt_model.pkl`: Saved model checkpoint for the best-performing Decision Tree Classifier.
 - `label_encoders.pkl`: Saved label encoders for categorical variables.
-- `requirements.txt`: Text file containing the libraries required for this project.
+- `requirements.txt`: Text file containing the libraries required for Streamlit app.
 - `scaler.pkl`: Saved scaler for feature scaling.
 - `streamlit_app.py`: Streamlit app for the project.
 
