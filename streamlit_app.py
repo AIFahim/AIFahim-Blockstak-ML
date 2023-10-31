@@ -58,7 +58,7 @@ def get_user_input():
     # Convert to DataFrame to match the input shape of our model
     user_data_df = pd.DataFrame(user_data)
 
-    st.write("10 important features are consider because not all the features are important")
+    # st.write("10 important features are consider because not all the features are important")
     
     # # Display the DataFrame for debug
     # st.write("User inputted data before scaling: ", user_data_df)
@@ -73,6 +73,11 @@ def get_user_input():
 
 # Get user input
 user_input = get_user_input()
+
+st.sidebar.markdown("""
+Please provide the customer's details for a term deposit subscription prediction.
+Only the 10 most important features are considered.
+""")
 
 # Display the prediction result
 st.header('Prediction Result')
