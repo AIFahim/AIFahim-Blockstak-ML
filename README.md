@@ -91,7 +91,7 @@
 - Age and Balance: These have very weak positive correlations with the label.
 - Day and Campaign: These have weak negative correlations with the label.
 
-<img src="https://github.com/AIFahim/AIFahim-Blockstak-ML/blob/master/images/corr_w_labels.png" width="400" height="300">
+<img src="https://github.com/AIFahim/AIFahim-Blockstak-ML/blob/master/images/corr_w_labels.png" width="500" height="700">
  
 **Outliers**: 
  **Based on Z-Scores**
@@ -104,7 +104,7 @@
 - Z-Scores of Pdays: Most Z-scores are below 3, but there are some that go beyond.
 - Z-Scores of Previous: Most Z-scores are below 3, but there are some that go beyond.
 
-<img src="https://github.com/AIFahim/AIFahim-Blockstak-ML/blob/master/images/zscores.png" width="400" height="300">
+<img src="https://github.com/AIFahim/AIFahim-Blockstak-ML/blob/master/images/zscores.png" width="500" height="700">
 
 
  **Based on Box-Plots**
