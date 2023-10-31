@@ -26,12 +26,12 @@ def get_user_input():
     balance = st.sidebar.number_input('Balance', min_value=-8000, max_value=80000, value=1423)
     age = st.sidebar.slider('Age', 18, 100, 41)
     day = st.sidebar.slider('Day of Month', 1, 31, 15)
-    month = st.sidebar.selectbox('Month', categorical_options['month'])
+    month = st.sidebar.selectbox('Month', label_encoders['month'].classes_)
     pdays = st.sidebar.number_input('Days since last contact', min_value=-1)
-    job = st.sidebar.selectbox('Job Type', categorical_options['job'])
-    poutcome = st.sidebar.selectbox('Previous Outcome', categorical_options['poutcome'])
+    job = st.sidebar.selectbox('Job Type', label_encoders['job'].classes_)
+    poutcome = st.sidebar.selectbox('Previous Outcome', label_encoders['poutcome'].classes_)
     campaign = st.sidebar.slider('Number of Contacts in Campaign', 1, 63, 2)
-    education = st.sidebar.selectbox('Education', categorical_options['education'])
+    education = st.sidebar.selectbox('Education', label_encoders['education'].classes_)
     
 
     # Label encode categorical features
