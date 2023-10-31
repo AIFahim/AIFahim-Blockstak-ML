@@ -48,8 +48,9 @@ def get_user_input():
         'education': [label_encoders['education'].transform([education])[0]],
     }
 
-    print(user_data)
-
+    # Display the user_data dictionary in the Streamlit app
+    st.write("User inputted data: ", user_data)
+    
     # Convert to DataFrame to match the input shape of our model
     user_data_df = pd.DataFrame(user_data)
     return user_data_df
