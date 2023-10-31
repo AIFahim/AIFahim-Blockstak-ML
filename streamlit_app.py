@@ -1,6 +1,7 @@
 import streamlit as st
 import joblib
 import numpy as np
+from sklearn.preprocessing import LabelEncoder
 
 # Load the trained Decision Tree model
 model = joblib.load('best_dt_model.pkl')
@@ -8,33 +9,55 @@ model = joblib.load('best_dt_model.pkl')
 # Create a sidebar for user input
 st.sidebar.header('User Input')
 
+# Initialize Label Encoders (one for each categorical feature)
+label_encoders = {}
+categorical_features = ['job', 'month', 'education', 'poutcome']
+
+for feature in categorical_features:
+    label_encoders[feature] = LabelEncoder()
+    label_encoders[feature].fit(df[feature])
+
+# Categorical options based on your data
+categorical_options = {
+    'job': ['admin.', 'blue-collar', 'entrepreneur', 'housemaid', 'management', 'retired', 'self-employed', 'services', 'student', 'technician', 'unemployed', 'unknown'],
+    'month': ['apr', 'aug', 'dec', 'feb', 'jan', 'jul', 'jun', 'mar', 'may', 'nov', 'oct', 'sep'],
+    'education': ['primary', 'secondary', 'tertiary', 'unknown'],
+    'poutcome': ['failure', 'other', 'success', 'unknown'],
+}
+
+
+
 def get_user_input():
-    age = st.sidebar.slider('Age', 18, 100, 25)
-    job = st.sidebar.selectbox('Job Type', ['admin', 'technician', 'blue-collar'])
-    balance = st.sidebar.number_input('Balance', min_value=0)
-    housing = st.sidebar.selectbox('Housing Loan', ['yes', 'no'])
+    # Collect user input for top 10 features only
+    age = st.sidebar.slider('Age', 18, 100, 41)
+    job = st.sidebar.selectbox('Job Type', categorical_options['job'])
+    balance = st.sidebar.number_input('Balance', min_value=-8000, max_value=80000, value=1423)
+    day = st.sidebar.slider('Day of Month', 1, 31, 15)
+    month = st.sidebar.selectbox('Month', categorical_options['month'])
+    duration = st.sidebar.number_input('Duration', min_value=0)
+    pdays = st.sidebar.number_input('Days since last contact', min_value=-1)
+    education = st.sidebar.selectbox('Education', categorical_options['education'])
+    poutcome = st.sidebar.selectbox('Previous Outcome', categorical_options['poutcome'])
+    campaign = st.sidebar.slider('Number of Contacts in Campaign', 1, 63, 2)
     
-    # Include all other features needed for prediction
-    marital = st.sidebar.selectbox('Marital Status', ['single', 'married', 'divorced'])
-    education = st.sidebar.selectbox('Education', ['primary', 'secondary', 'tertiary'])
-    default = st.sidebar.selectbox('Has Credit in Default?', ['yes', 'no'])
-    loan = st.sidebar.selectbox('Has Personal Loan?', ['yes', 'no'])
-    contact = st.sidebar.selectbox('Contact Type', ['cellular', 'telephone'])
-    
-    # Create a NumPy array of the input features
+    # Label encode categorical features
     user_data = {
         'age': [age],
-        'job': [job],
+        'job': [label_encoders['job'].transform([job])[0]],
         'balance': [balance],
-        'housing': [housing],
-        'marital': [marital],
-        'education': [education],
-        'default': [default],
-        'loan': [loan],
-        'contact': [contact]
+        'day': [day],
+        'month': [label_encoders['month'].transform([month])[0]],
+        'duration': [duration],
+        'pdays': [pdays],
+        'education': [label_encoders['education'].transform([education])[0]],
+        'poutcome': [label_encoders['poutcome'].transform([poutcome])[0]],
+        'campaign': [campaign],
     }
-
-    return user_data
+    
+    # Convert to DataFrame to match the input shape of our model
+    user_data_df = pd.DataFrame(user_data)
+    
+    return user_data_df
 
 # Get user input
 user_input = get_user_input()
