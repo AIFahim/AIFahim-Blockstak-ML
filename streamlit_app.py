@@ -47,6 +47,8 @@ def get_user_input():
         'campaign': [campaign],
     }
 
+    print(user_data)
+
     # Convert to DataFrame to match the input shape of our model
     user_data_df = pd.DataFrame(user_data)
     return user_data_df
