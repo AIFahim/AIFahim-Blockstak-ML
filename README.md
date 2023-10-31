@@ -42,9 +42,11 @@
 - Decision Tree Classifier: Mean Accuracy ~ 86.73%, Standard Deviation ~ 1.03%
 - Naive Bayes Classifier: Mean Accuracy ~ 83.46%, Standard Deviation ~ 1.79%
 
-### Outlier Removal and Retraining
+### Outlier Removal using z-score and Retraining
 
-- **New Models with No Outliers**: Decision Tree Classifier: Mean Accuracy ~ 87.09%, Naive Bayes Classifier: Mean Accuracy ~ 84.70%
+- **Models with No Outliers**:
+- Decision Tree Classifier: Mean Accuracy ~ 87.09%, Standard Deviation: ~0.14%
+- Naive Bayes Classifier: Mean Accuracy ~ 84.70%, Standard Deviation: ~0.23%
 
 ### Retraining with Top 10 Features
 
@@ -56,11 +58,37 @@
   - Decision Tree Classifier: Mean Accuracy ~ 87.44%, Standard Deviation ~ 0.13%
   - Naive Bayes Classifier: Mean Accuracy ~ 86.00%, Standard Deviation ~ 0.25%
 
-### Hyperparameter Tuning
+### Ensemble Modeling
+To further improve model performance, an ensemble method was employed. This combined two different classifiers: Decision Tree and Naive Bayes. A soft voting strategy was used, giving more weight to the Decision Tree model with weights [2, 1] for Decision Tree and Naive Bayes, respectively.
 
-- Best Model: Decision Tree Classifier
-- Best Parameters: {'classifier': 'DecisionTree', 'criterion': 'gini', 'max_depth': 47, 'min_samples_split': 5, 'min_samples_leaf': 8}
-- Best Score: 90.19%
+Despite the combined approach, the ensemble model did not result in a significant improvement in performance. The 10-fold cross-validation mean accuracy remained at approximately 87.44% with a standard deviation of ~ 0.13%. 
+
+### Hyper-Parameter Tuning
+
+To fine-tune the models, hyper-parameter tuning was performed using the Optuna framework. Optuna was configured to run 50 trials to search for the best hyperparameters for both Decision Tree and Naive Bayes classifiers. The objective was to maximize the mean accuracy of a 10-Fold Stratified Cross-Validation.
+
+#### Tuning Strategy
+
+For Decision Tree Classifier:
+- `criterion`: ['gini', 'entropy']
+- `max_depth`: Range from 10 to 50
+- `min_samples_split`: Range from 2 to 15
+- `min_samples_leaf`: Range from 1 to 10
+
+For Naive Bayes Classifier:
+- `var_smoothing`: Logarithmically spaced values ranging from 1e-10 to 1e-2
+
+#### Best Results
+
+After 50 trials, the best performing model and hyperparameters were:
+- **Best Model**: Decision Tree Classifier
+- **Best Parameters**: 
+  - `criterion`: gini
+  - `max_depth`: 47
+  - `min_samples_split`: 5
+  - `min_samples_leaf`: 8
+- **Best Score**: 90.19% Accuracy I found finally. 
+
 
 ---
 
