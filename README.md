@@ -2,6 +2,7 @@
 
 # Bank Telemarketing Prediction Model
 **Deployed in Streamlit:**
+
 [<img src="https://github.com/AIFahim/AIFahim-Blockstak-ML/blob/master/images/web-ui.png" width="500" height="300">](https://aifahim-blockstak-ml-ntwnox2nctw8qbaukqrmoy.streamlit.app/)
 ## Table of Contents
 
