@@ -1,7 +1,7 @@
 # AIFahim-Blockstak-ML
 
 # Bank Telemarketing Prediction Model
-<img src="https://github.com/AIFahim/AIFahim-Blockstak-ML/blob/master/images/web-ui.png" width="500" height="500">
+<img src="https://github.com/AIFahim/AIFahim-Blockstak-ML/blob/master/images/web-ui.png" width="500" height="300">
 ## Table of Contents
 
 1. [Exploratory Data Analysis (EDA)](#eda)
